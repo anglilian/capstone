@@ -6,6 +6,6 @@ The following project aimed to understand public opinion on vernacular education
 
 The webscraper for English articles works signficantly faster than the Malay one because it uses the GoogleNews and Newspaper3k library which, unfortunately, did not work well with the Malay articles. Therefore, those articles had to be scraped using Selenium and BeautifulSoup4 which was significantly slower.
 
-The articles were analysed using sentiment analysis, emotion analysis and topic modelling. The Malay articles all relied on Husein Zolkepli's <a href="https://github.com/huseinzol05/Malaya">Malaya</a> library while the English articles used <a href="https://github.com/cjhutto/vaderSentiment>VADER"</a>, <a href="https://shivamsharma26.github.io/text2emotion/">text2emotion</a> and <a href="https://github.com/MaartenGr/BERTopic">BERTopic</a> respectively. The results can be viewed within the Jupyter notebooks.
+The articles were analysed using sentiment analysis, emotion analysis and topic modelling. The Malay articles all relied on Husein Zolkepli's <a href="https://github.com/huseinzol05/Malaya">Malaya</a> library while the English articles used <a href="https://github.com/cjhutto/vaderSentiment">VADER</a>, <a href="https://shivamsharma26.github.io/text2emotion/">text2emotion</a> and <a href="https://github.com/MaartenGr/BERTopic">BERTopic</a> respectively. The results can be viewed within the Jupyter notebooks.
 
 For a full analysis of the results and methods please refer to the paper [WORK IN PROGRESS].
