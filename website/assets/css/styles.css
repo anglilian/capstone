@@ -236,3 +236,196 @@ p {
   margin: 0!important;
 }
 
+.y-label {
+  transform: rotate(-90deg);
+  text-anchor: middle;
+}
+
+.x-label {
+  text-anchor: middle;
+}
+
+.graph-button {
+  background-color: var(--bs-gray-500);
+  font-size: x-small;
+  border-radius: 0;
+  border-width: 1px;
+  border-color: white;
+}
+
+.graph-button:hover {
+  background-color: var(--bs-gray-600);
+}
+
+.graph-button:focus {
+  background-color: var(--bs-gray-600);
+}
+
+.icon {
+  padding: 0.5rem;
+  font-size: 3rem;
+}
+
+.alliance {
+  color: red;
+}
+
+.independent {
+  color: green;
+}
+
+.dap {
+  color: blue;
+}
+
+.column-header {
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -0.1rem;
+}
+
+.timeline-container::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  right: -4.1rem;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: -30%;
+  text-align: right!important;
+}
+
+.right {
+  left: 30%;
+}
+
+.right::after {
+  left: -4.1rem;
+}
+
+.timeline-container {
+  position: relative;
+  background-color: inherit;
+  width: 45%;
+}
+
+.malay {
+  color: green;
+}
+
+.indian {
+  color: blue;
+}
+
+.chinese {
+  color: red;
+}
+
+.author-card {
+  background: white;
+  width: 100%;
+  height: 15rem;
+  position: relative;
+  box-shadow: 0.1rem 0.1rem 0.4rem black;
+}
+
+.author-image {
+  height: 6rem;
+  object-fit: cover;
+  width: 5rem;
+  object-position: center;
+  position: absolute;
+  left: 5%;
+  top: 3%;
+  box-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.card-text {
+  position: absolute;
+  top: 50%;
+  margin-right: 3%;
+  width: 100%;
+  display: flex;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+}
+
+.fa.fa-paperclip {
+  font-size: 2rem;
+  position: absolute;
+  top: -3%;
+  left: 5%;
+  color: silver;
+  z-index: 100;
+  transform: rotate(45deg);
+  text-shadow: 0.1rem 0.1rem 0.1rem var(--bs-gray-dark);
+}
+
+.book-button {
+  background: transparent;
+  outline: none;
+  border-color: transparent;
+}
+
+.book-button::focus {
+  background-color: transparent;
+  color: black;
+}
+
+.heading-div {
+  background-color: black;
+  color: white;
+}
+
+.book-div {
+  position: absolute;
+  right: -30%;
+  top: 2rem;
+}
+
+.toggle-image {
+  display: none;
+}
+
+.book-button:hover {
+  background-color: var(--bs-gray-700);
+  outline: none;
+}
+
+.book-button:focus {
+  outline: none;
+}
+
+.book-button:active {
+  background-color: transparent!important;
+}
+
