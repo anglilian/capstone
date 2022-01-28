@@ -3,6 +3,8 @@ var margin = {top: 30, right: 30, bottom: 70, left: 60},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
+var formatDecimal = d3.format(",.2f");
+
 // append the svg object to the body of the page
 var federalsvg = d3.select("#federalresults")
   .append("svg")
@@ -99,12 +101,18 @@ function update(selectedLink) {
           .attr("height", d => height - y(d[key]))
           .attr("fill", d => color(key));
             g.append("text")
-            .attr("x", d => xSubgroup(key))
             .attr("y", d => y(d[key]))
             .attr("dy", '-1em')
             .attr("class","bar-label")
             .style("font-size", "xx-small")
-            .text(d[key])
+            .text(function(d){
+                if (selectedLink===percentage){
+                    return formatDecimal(d[key])
+                } else {
+                    return d[key]
+                }
+            })
+            .attr("x", d => xSubgroup(key)+xSubgroup.bandwidth()/2-d3.select(this).node().getBBox().width/4)
         })
     })
             

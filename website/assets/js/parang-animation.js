@@ -14,7 +14,7 @@ const parangObserver = new IntersectionObserver(function(entries, parangObserver
         }
        entry.target.classList.remove('appear');
        newParangImage.classList.add('appear');
-        parangObserver.unobserve(entry.target);
+    parangObserver.unobserve(entry.target);
     });
 }, parangOptions);
 

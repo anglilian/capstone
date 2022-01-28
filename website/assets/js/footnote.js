@@ -1,3 +1,8 @@
+$(".footnote-button").each(function(i, btn){
+    $(this).attr("data-footnote-identifier",i+1);
+    $(this).text(i+1);
+})
+
 var ID;
 
 var check_pos = function() {
@@ -34,7 +39,7 @@ $(document).on("click", function () {
             $("aside").addClass("active");
             ID = $(event.target).attr("data-footnote-identifier");
             var content = $(event.target).attr("data-footnote-content");
-            $("#footnote-text").text(content);
+            $("#footnote-text").html(content);
             check_pos();
         }
     }   
