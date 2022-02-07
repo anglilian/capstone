@@ -109,25 +109,24 @@ document.querySelectorAll('.step').forEach((i) => {
 
 const triggerOn = document.querySelector('.triggerOn');
 const triggerOff = document.querySelector('.triggerOff');
-let triggerOnEnabled = false;
-// let triggerOffEnabled = false;
 
-const mapOptions = {
-	// root: null,
-	// rootMargin: "-50%"
-};
+const mapOptions = {};
 
 function setMapFixed() {
 	$('#map').css('position', 'fixed');
 	$('#map').css('width', '50%');
 }
 
-function setMapAbsolute() {
+function setMapAbsolute(setToBottom) {
 	$('#map').css('position', 'absolute');
 	$('#map').css('width', '100%');
-
-	// $('#map').css('top', null);
-	// $('#map').css('bottom', '0px');
+	if (setToBottom) {
+		$('#map').css('bottom', '0px');
+		$('#map').css('top', null);
+	} else {
+		$('#map').css('bottom', null);
+		$('#map').css('top', '0px');
+	}
 }
 
 const triggerOnObserver = new IntersectionObserver(function (
@@ -136,14 +135,41 @@ const triggerOnObserver = new IntersectionObserver(function (
 ) {
 	entries.forEach((entry) => {
 		if (entry.isIntersecting) {
-			triggerOnEnabled = true;
+			console.log('trigger on visible,', entry.boundingClientRect.top);
+			if (entry.boundingClientRect.top > 0) {
+				setMapAbsolute();
+			}
 		} else {
-			if (triggerOnEnabled) {
+			console.log('trigger on not visible', entry.boundingClientRect.top);
+			if (entry.boundingClientRect.top < 0) {
 				setMapFixed();
-				triggerOnEnabled = false;
+			} else {
+				setMapAbsolute();
 			}
 		}
 	});
 },
 mapOptions);
 triggerOnObserver.observe(triggerOn);
+
+const triggerOffObserver = new IntersectionObserver(function (
+	entries,
+	mapObserver
+) {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			console.log('trigger off visible', entry.boundingClientRect.top);
+			if (entry.boundingClientRect.top > 0) {
+				setMapAbsolute(true);
+			}
+		} else {
+			console.log('trigger off not visible', entry.boundingClientRect.top);
+
+			if (entry.boundingClientRect.top > 0) {
+				setMapAbsolute(true);
+			}
+		}
+	});
+},
+mapOptions);
+triggerOffObserver.observe(triggerOff);
