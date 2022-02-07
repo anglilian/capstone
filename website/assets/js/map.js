@@ -110,8 +110,6 @@ document.querySelectorAll('.step').forEach((i) => {
 const triggerOn = document.querySelector('.triggerOn');
 const triggerOff = document.querySelector('.triggerOff');
 
-const mapOptions = {};
-
 function setMapFixed() {
 	$('#map').css('position', 'fixed');
 	$('#map').css('width', '50%');
@@ -121,20 +119,22 @@ function setMapAbsolute(setToBottom) {
 	$('#map').css('position', 'absolute');
 	$('#map').css('width', '100%');
 	if (setToBottom) {
+		$('#map').css('top', ''); // not sure if this works correctly in jquery but we want to remove/unset this property
 		$('#map').css('bottom', '0px');
-		$('#map').css('top', null);
 	} else {
-		$('#map').css('bottom', null);
 		$('#map').css('top', '0px');
+		$('#map').css('bottom', 'none');
 	}
 }
 
+let lameToggle = false;
 const triggerOnObserver = new IntersectionObserver(function (
 	entries,
 	mapObserver
 ) {
 	entries.forEach((entry) => {
 		if (entry.isIntersecting) {
+			lameToggle = true;
 			console.log('trigger on visible,', entry.boundingClientRect.top);
 			if (entry.boundingClientRect.top > 0) {
 				setMapAbsolute();
@@ -148,8 +148,7 @@ const triggerOnObserver = new IntersectionObserver(function (
 			}
 		}
 	});
-},
-mapOptions);
+});
 triggerOnObserver.observe(triggerOn);
 
 const triggerOffObserver = new IntersectionObserver(function (
@@ -166,10 +165,12 @@ const triggerOffObserver = new IntersectionObserver(function (
 			console.log('trigger off not visible', entry.boundingClientRect.top);
 
 			if (entry.boundingClientRect.top > 0) {
+				lameToggle && setMapFixed();
+			} else {
 				setMapAbsolute(true);
+				lameToggle = false;
 			}
 		}
 	});
-},
-mapOptions);
+});
 triggerOffObserver.observe(triggerOff);
