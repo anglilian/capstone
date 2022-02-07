@@ -160,6 +160,8 @@ const triggerOffObserver = new IntersectionObserver(function (
 			console.log('trigger off visible', entry.boundingClientRect.top);
 			if (entry.boundingClientRect.top > 0) {
 				setMapAbsolute(true);
+			} else {
+				lameToggle = true;
 			}
 		} else {
 			console.log('trigger off not visible', entry.boundingClientRect.top);
@@ -168,7 +170,6 @@ const triggerOffObserver = new IntersectionObserver(function (
 				lameToggle && setMapFixed();
 			} else {
 				setMapAbsolute(true);
-				lameToggle = false;
 			}
 		}
 	});
