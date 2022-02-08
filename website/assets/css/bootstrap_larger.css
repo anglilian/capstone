@@ -12,7 +12,28 @@
 
 @media (min-width:1400px) {
   .m-xxl-6 {
-    margin: 0rem 14rem 1rem 14rem!important;
+    margin: 0rem 21rem 1rem 21rem!important;
+  }
+}
+
+@media (min-width:1400px) {
+  .m-xxl-6 .text-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width:992px) {
+  .m-lg-6 .text-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .m-xl-6 .text-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 

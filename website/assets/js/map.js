@@ -175,3 +175,20 @@ const triggerOffObserver = new IntersectionObserver(function (
 	});
 });
 triggerOffObserver.observe(triggerOff);
+
+// const mapObserver = new IntersectionObserver(function(entries, mapObserver){
+//     entries.forEach(entry=>{
+//         var bbox = entry.boundingClientRect;
+//         if (entry.isIntersecting && bbox.top<$(window).height()){
+//             console.log("TRIGGER");
+//             $("#map").css("position", "fixed");
+//             $("#map").css("width", "50%");
+//         } else {
+//             $("#map").css("position", "absolute");
+//             $("#map").css("width", "100%")
+//             $("#map").css("bottom", "0")
+//         }
+//     });
+// }, mapOptions);
+
+// mapObserver.observe(mapDiv);

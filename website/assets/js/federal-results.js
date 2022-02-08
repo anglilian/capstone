@@ -154,11 +154,19 @@ function update(selectedLink) {
         .text(ylabelText);
   
 })
+    if (selectedLink == raw){
+        $("#percentagebutton").css('background-color', 'var(--bs-gray-500)');
+        $("#rawbutton").css('background-color', 'var(--bs-gray-600)');
+
+    } else {
+            $("#percentagebutton").css('background-color', 'var(--bs-gray-600)');
+        $("#rawbutton").css('background-color', 'var(--bs-gray-500)');
+    }
 }
 
 // Initialize plot
 update(percentage)
-
+    
     
 // svg.append("text")
 //     .attr("class", "x-label")
