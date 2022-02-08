@@ -31,7 +31,6 @@ var mapMarkers = [
 		coordinates: [3.188, 101.70497],
 		label: 'Alhambra Theatre',
 	},
-	{ id: 4, type: 'Point', coordinates: [3.16894, 101.69106], label: 'UMNO HQ' },
 	{
 		id: 3,
 		type: 'Polygon',
@@ -56,6 +55,12 @@ var mapMarkers = [
 		],
 		label: 'Kampung Baru',
 	},
+    { 
+        id: 4, 
+        type: 'Point', 
+        coordinates: [3.16894, 101.69106], 
+        label: 'UMNO HQ' 
+    }
 ];
 
 var markerHarun = L.marker(mapMarkers[0].coordinates)
@@ -86,17 +91,17 @@ function observerCallback(entries, observer) {
 			if (id == 1) {
 				markerVar.setLatLng(mapMarkers[id]['coordinates']);
 				markerVar.setPopupContent(mapMarkers[id]['label']).openPopup();
-			} else if (id == 2) {
+			} else if (id == 3) {
 				markerVar.setLatLng(mapMarkers[id]['coordinates']);
 				markerVar.setPopupContent(mapMarkers[id]['label']).openPopup();
-			} else if (id == 3) {
+			} else if (id == 2) {
 				console.log(mapMarkers[id]['coordinatePoints']);
 				var markerPoly = L.polygon([mapMarkers[id]['coordinatePoints']]).addTo(
 					mymap
 				);
 				markerPoly.bindPopup(mapMarkers[id]['label']).openPopup();
 			}
-			mymap.setView([lat, lng * 0.9993], zoom);
+			mymap.setView([lat, lng * 0.9994], zoom);
 		}
 	});
 }
