@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <style>
+            #scrolly {
+              position: relative;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              padding: 1rem;
+              top: 50%
+            }
+      
+            #scrolly > * {
+              -webkit-box-flex: 1;
+              -ms-flex: 1;
+              flex: 1;
+            }
+      
+            #title {
+                position: -webkit-sticky;
+                position: sticky;
+                width: 100%;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+            #title h1{
+                top: 50%;
+                left: 50%;
+                text-align: right;
+                -moz-transform: translate(0, -50%);
+                -webkit-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                position: absolute;
+            }
+
+            .step {
+              margin: 0 auto 2rem auto;
+              color: #fff;
+            }
+      
+            .step:last-child {
+              margin-bottom: 0;
+            }
+      
+            .step.is-active {
+              background-color: white;
+              color: #3b3b3b;
+            }
+      
+            .step p {
+              text-align: center;
+              padding: 1rem;
+              font-size: 1.5rem;
+            }
+
+            body {
+            font-family: "DM Sans", sans-serif;
+            min-height: 1280px;
+            color: #3b3b3b;
+            font-size: 24px;
+            background-color: white;
+            }
+
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            a {
+            margin: 0;
+            }
+          </style>
+    </head>
+
+    <body>
+        <main>
+            <section id="scrolly">
+                <div id ="title">
+                    <h1>
+                        <span style = color:#2e6173>The Colombian</span>
+                        <br>
+                        <span style = color:#61b6b3>Oligarchy Project</span>
+                        <br>
+                        <span style = color:#2e6173><i>Quien es Quien</i></span>
+                    </h1>
+                </div>
+                <article>
+                    <div class="step">
+                        <p>
+                            This digital humanities project examines the concentration of political and economic power in twentieth-century Colombia, by employing social network analysis to map the social world and political connections of one of Latin America’s most enduring ruling classes.
+                        </p>
+                    </div>
+                </article>
+                
+            </section>
+        </main>
+    </body>
+    
+   
+    <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="node_modules/stickyfilljs/dist/stickyfill.min.js"></script>
+    <script src="node_modules/scrollama/build/scrollama.min.js"></script>
+    <script>
+        // using d3 for convenience
+        var main = d3.select("main");
+        var scrolly = main.select("#scrolly");
+        var figure = scrolly.select("#title");
+        var article = scrolly.select("article");
+        var step = article.selectAll(".step");
+  
+        // initialize the scrollama
+        var scroller = scrollama();
+  
+        // generic window resize listener event
+        function handleResize() {  
+            var stepH = Math.floor(window.innerHeight * 0.75);
+            step.style("height", stepH + "px");
+
+            var figureHeight = window.innerHeight / 2;
+            var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+    
+            figure
+                .style("height", figureHeight + "px")
+                .style("top", figureMarginTop + "px");
+    
+            // 3. tell scrollama to update new element dimensions
+            scroller.resize();
+        }
+  
+        // scrollama event handlers
+        function handleStepEnter(response) {
+          console.log(response);
+          // response = { element, direction, index }
+  
+          // add color to current step only
+          step.classed("is-active", function(d, i) {
+            return i === response.index;
+          });
+  
+          // update graphic based on step
+          figure.select("p").text(response.index + 1);
+        }
+  
+        function setupStickyfill() {
+          d3.selectAll(".sticky").each(function() {
+            Stickyfill.add(this);
+          });
+        }
+  
+        function init() {
+          setupStickyfill();
+  
+          // 1. force a resize on load to ensure proper dimensions are sent to scrollama
+          handleResize();
+  
+          // 2. setup the scroller passing options
+          // 		this will also initialize trigger observations
+          // 3. bind scrollama event handlers (this can be chained like below)
+          scroller
+            .setup({
+              step: "#scrolly .step #title #blank",
+              offset: 0.5,
+              debug: true
+            })
+            .onStepEnter(handleStepEnter);
+  
+          // setup resize event
+          window.addEventListener("resize", handleResize);
+        }
+  
+        // kick things off
+        init();
+      </script>
+    
+</html>
