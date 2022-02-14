@@ -63,7 +63,7 @@ p {
   padding: 1rem 1.3rem 1rem 1.3rem;
   box-sizing: border-box;
   border-radius: 0.5em;
-  z-index: 30;
+  z-index: 999;
 }
 
 .citation {
@@ -148,7 +148,7 @@ p {
   content: "\00a0";
   background-color: ghostwhite;
   border-width: 1px;
-  z-index: 29;
+  z-index: 998;
 }
 
 #background {
