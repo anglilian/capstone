@@ -18,12 +18,42 @@
 </head>
 
 <body>
+    <div class="container" style="max-width: 20%;position: fixed;z-index: 999;top: 40%;">
+        <nav class="navbar"><button class="btn btn-primary navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" style="background-color: transparent;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-bar-right">
+                    <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"></path>
+                </svg></button>
+            <div id="navbarToggleExternalContent" class="collapse">
+                <div id="content-nav">
+                    <ul class="list-unstyled">
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#background">Background</a></li>
+                        <li>Historical Perspectives</li>
+                        <li style="padding-left: 1rem;">
+                            <ul class="list-unstyled">
+                                <li><a href="#noc">National Operations Council</a></li>
+                                <li><a href="#slimming">John Slimming</a></li>
+                                <li><a href="#goh">Goh Cheng Teik</a></li>
+                                <li><a href="#kua">Kua Kia Soong</a></li>
+                                <li><a href="#vonvorys">Karl von Vorys</a></li>
+                                <li><a href="#other">Other</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#now">Now what?</a></li>
+                    </ul>
+                    <div style="padding-left: 1rem;display: flex;flex-direction: column;"></div>
+                </div>
+            </div>
+        </nav>
+    </div>
     <section style="overflow: hidden;background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.2)), url(&quot;assets/img/cover-image.jpg&quot;) center/cover;background-attachment: fixed;justify-content: center;align-items: center;flex-direction: column;position: relative;display: flex;">
         <div id="title" class="intro-div" style="height: 110vh;width: 100%;">
             <div class="box">
                 <h1 class="d-lg-flex align-items-lg-center" style="text-align: center;color: white;text-shadow: 0.1rem 0.1rem 0.2rem black;">History’s Take on May 13<br></h1>
             </div>
-            <h6 style="position: relative;bottom: -30%;color: white;font-family: 'Roboto Slab';">by Ang Li-Lian<sup><i class="fa fa-info-circle" style="font-size: smaller;"></i></sup>&nbsp;</h6>
+            <div style="position: relative;bottom: -30%;color: white;font-family: 'Roboto Slab';display: flex;flex-direction: column;align-items: center;">
+                <h6>by Ang Li-Lian<button class="btn btn-primary footnote-button" type="button" style="background-color: transparent;" data-footnote-identifier="0" data-footnote-content="I acknowledge my position as a Malaysian Chinese who has been educated in private and international educational institutions. I have only recently (in the past year) started to actively engage myself in understanding the Malaysian political landscape through YPolitics and independent research. I acknowledge that my social circles are liberal-leaning and may have influenced this paper to a certain extent, but have done my due diligence to fairly assess all sources. I hope that this infographic will help readers understand what May 13 means as a historical and political event to prevent the event from being misused to stir up racial tensions."><i class="fa fa-info-circle" style="font-size: larger;"></i></button>&nbsp;<br></h6>
+                <p style="font-size: x-small;">Last updated February 2022</p>
+            </div>
         </div>
         <div></div>
         <div class="text-background m-xl-6 m-lg-6 m-xxl-6">
@@ -412,7 +442,6 @@
                 <p class="text-content">Many others have come forward in the oral history projects hosted by Malaysiakini, May 13 Incident Oral History Group, among others to record the experiences of those who lived through May 13, as an antidote against national forgetting. Their stories form the threads of the rich and complex tapestry we call history. But perhaps a tapestry is the wrong metaphor because it implies immutability. Perhaps each story is a bead in a kaleidoscope. You could turn the kaleidoscope around and around to see a different pattern, but the colours will never change. No amount of twisting can change the facts even if we might interpret them differently.<br><br>I do not bring up the past to stir trouble, but to call forth the same hopeful note that the works of the NOC, Slimming, Goh, Kua and von Vorys concluded with. Even if their visions differed, all of them believed that we could build a more harmonious Malaysia. <br><br>I would you to ask yourself some questions in light of this, perhaps new, perspective:<br></p>
                 <p class="text-content" style="font-family: 'Special Elite';">What versions of May 13 have you heard and how have the details of those accounts differed?<br><br>Why might each account be different? Was there an intentional distortion of facts, rumour-mongering, a shaky memory?<br><br>Will the present-day government uphold the interests of&nbsp;<em>all&nbsp;</em>its citizens, regardless of race, religion, gender or sexuality? <br><br>And if it doesn’t, how will we keep the government accountable?<br><br>Do you think Malaysia today will encounter another May 13? If not, what is different between Malaysia now and in 1969?</p>
             </section>
-            <section id="furtherreading" class="heading-div"></section>
         </div>
     </section>
     <aside class="footnote-content">
@@ -429,6 +458,7 @@
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="assets/js/map.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/parang-animation.js"></script>
     <script src="assets/js/show-book.js"></script>
     <script src="assets/js/skip-section.js"></script>
