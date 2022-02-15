@@ -40,6 +40,7 @@ p {
   box-shadow: 0 0 8px var(--bs-gray-dark);
   opacity: 0;
   transition-duration: 0.25s;
+  z-index: 999;
 }
 
 .active {
@@ -63,7 +64,7 @@ p {
   padding: 1rem 1.3rem 1rem 1.3rem;
   box-sizing: border-box;
   border-radius: 0.5em;
-  z-index: 999;
+  z-index: -1;
 }
 
 .citation {
@@ -148,7 +149,7 @@ p {
   content: "\00a0";
   background-color: ghostwhite;
   border-width: 1px;
-  z-index: 998;
+  z-index: -2;
 }
 
 #background {
@@ -506,5 +507,21 @@ button.book-button:active {
   height: 1px;
   background-color: red;
   z-index: 100;
+}
+
+#content-nav {
+  flex-direction: column;
+  display: flex;
+  background-color: transparent;
+  z-index: 999;
+  padding-left: 1rem;
+  font-family: 'Roboto Slab';
+  color: white;
+  opacity: 70%;
+  font-size: smaller;
+}
+
+#content-nav a {
+  color: white;
 }
 

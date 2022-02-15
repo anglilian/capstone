@@ -1,6 +1,8 @@
 $(".footnote-button").each(function(i, btn){
-    $(this).attr("data-footnote-identifier",i+1);
-    $(this).text(i+1);
+    if (i!=0){
+     $(this).attr("data-footnote-identifier",i);
+    $(this).text(i);   
+    }
 })
 
 var ID;
