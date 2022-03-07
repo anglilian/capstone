@@ -525,3 +525,9 @@ button.book-button:active {
   color: white;
 }
 
+.party_caption {
+  font-size: medium;
+  font-family: 'Special Elite';
+  color: black;
+}
+
