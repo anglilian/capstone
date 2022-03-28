@@ -8,4 +8,4 @@ The webscraper for English articles works signficantly faster than the Malay one
 
 The articles were analysed using sentiment analysis, emotion analysis and topic modelling. The Malay articles all relied on Husein Zolkepli's <a href="https://github.com/huseinzol05/Malaya">Malaya</a> library while the English articles used <a href="https://github.com/cjhutto/vaderSentiment">VADER</a>, <a href="https://shivamsharma26.github.io/text2emotion/">text2emotion</a> and <a href="https://github.com/MaartenGr/BERTopic">BERTopic</a> respectively. The results can be viewed within the Jupyter notebooks.
 
-For a full analysis of the results and methods please refer to the paper [WORK IN PROGRESS].
+For a full analysis of the results and methods please refer to the <a href= "https://github.com/anglilian/capstone/blob/main/Understanding%20Public%20Opinion%20on%20Vernacular%20Education%20in%20Malaysia.pdf">paper</a>.
