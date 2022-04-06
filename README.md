@@ -7,7 +7,7 @@ The following project contains the code for two major case studies that form my 
 The first project aimed to understand public opinion on vernacular education in Malaysia. Ultimately, the author scraped 2580 Malay language articles and 3235 English language articles on vernacular education in Malaysia from 2017-2020 and 2015-2020 respectively. The Excel workbooks contained the raw scraped data with each sheet filtered to remove articles which did not relate to the exploration of the topic to a final 125 and 188 articles for Malay and English respectively.
 
 ![8](https://user-images.githubusercontent.com/43257301/161843791-b3a9d07c-34e4-45e2-a631-5f551f620177.png)
-![9](https://user-images.githubusercontent.com/43257301/161843797-65bcb142-604d-4c09-af05-36d2b021be02.png)
+![Capstone Oral Defense](https://user-images.githubusercontent.com/43257301/161924638-f2ee4987-7bae-4e3c-98d8-4636bac75ab2.png)
 
 The webscraper for English articles works signficantly faster than the Malay one because it uses the GoogleNews and Newspaper3k library which, unfortunately, did not work well with the Malay articles. Therefore, those articles had to be scraped using Selenium and BeautifulSoup4 which was significantly slower.
 
