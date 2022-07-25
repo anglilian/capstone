@@ -2,7 +2,7 @@
 
 The following project contains the code for two major case studies that form my senior Capstone project.
 
-## Understanding Public Opinoin on Vernacular Education in Malaysia
+## Understanding Public Opinion on Vernacular Education in Malaysia
 
 The first project aimed to understand public opinion on vernacular education in Malaysia. Ultimately, the author scraped 2580 Malay language articles and 3235 English language articles on vernacular education in Malaysia from 2017-2020 and 2015-2020 respectively. The Excel workbooks contained the raw scraped data with each sheet filtered to remove articles which did not relate to the exploration of the topic to a final 125 and 188 articles for Malay and English respectively.
 
